@@ -1,6 +1,6 @@
 /****************************************************************************
  *
- * Copyright (c) 2019 Kistler Instrumente AG
+ * Copyright (c) 2016-2019 Intel Corporation
  *
  * Licensed under the Apache License, Version 2.0 (the "License"),
  * you may not use this file except in compliance with the License.
@@ -16,32 +16,9 @@
  *
  ****************************************************************************/
 
-#ifndef TCP_ADAPTER_H
-#define TCP_ADAPTER_H
+#ifndef OC_U_IDS_INTERNAL_H
+#define OC_U_IDS_INTERNAL_H
 
-#include "ipcontext.h"
-#include "port/oc_connectivity.h"
+#define OCF_SEC_U_IDS_STORE_NAME "u_ids"
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-int oc_tcp_connectivity_init(ip_context_t *dev);
-
-void oc_tcp_connectivity_shutdown(ip_context_t *dev);
-
-int oc_tcp_send_buffer(ip_context_t *dev, oc_message_t *message,
-                       const struct sockaddr_storage *receiver);
-
-bool oc_tcp_end_session(const oc_endpoint_t *endpoint, bool notify_session_end,
-                        oc_endpoint_t *session_endpoint);
-
-void oc_tcp_adapter_mutex_init(void);
-
-void oc_tcp_adapter_mutex_destroy(void);
-
-#ifdef __cplusplus
-}
-#endif
-
-#endif /* TCP_ADAPTER_H */
+#endif /* OC_U_IDS_INTERNAL_H */
